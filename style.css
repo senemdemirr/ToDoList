@@ -1,0 +1,140 @@
+
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #FFF;
+	background-color: var(--dark);
+}
+.header {
+	padding: 40px 20px;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+h1{
+	font-size: 50px;
+	font-weight: 300;
+	color: var(--grey);
+	margin-bottom: 20px;
+}
+#new-task{
+	flex: 1 1 0%;
+	width: 622px;
+	height: 69px;
+	background-color: var(--darker);
+	color: var(--light);
+	font-size: 22px;
+	border-radius: 20px;
+	border: none;
+	margin-right: 10px;
+}
+#new-task ::placeholder{
+	color: var(--grey);
+}
+#new-task:focus{
+	outline: none;
+}
+#add-task{
+	width: 117px;
+	height: 69px;
+	border: none;
+	background-color: var(--dark);
+	color: var(--pink);
+	font-weight: 700;
+	font-size: 24px;
+	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: 0.4s;
+	cursor: pointer;
+}
+#add-task:hover{
+	opacity: 0.8;
+}
+#add-task:active{
+	opacity: 0.6;
+}
+.main {
+	flex: 1 1 0%;
+	max-width: 770px;
+	width: 100%;
+	margin: 0 auto;
+}
+.task-list{
+	padding: 10px;
+	margin-left: -5px;
+}
+.task-list h2{
+	font-size: 30px;
+	font-weight: 300;
+	color: var(--grey);
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+.task{
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--darkest);
+	padding: 20px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+.content{
+	flex: 1 1 0%;
+}
+.content .text:not(:read-only){
+	color: var(--pink);
+}
+#add_text{
+	border: none;
+	background-color: var(--darkest);
+}
+#add_text:focus{
+	outline: none;
+}
+.actions{
+	display: flex;
+	margin: 0 -10px;
+}
+#edit{
+	cursor: pointer;
+	margin-left: 300px;
+	font-size: 23px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border: none;
+	background-color: var(--darkest);
+
+}
+#delete{
+	cursor: pointer;
+	font-size: 23px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+	color: crimson;
+	background-color: var(--darkest);
+	border: none;
+}
