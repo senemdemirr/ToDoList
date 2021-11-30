@@ -1,10 +1,15 @@
 window.addEventListener('load', () => {
+    
     var new_task = document.getElementById('new-task');
     var add_task = document.getElementById('add-task');
     var tasks = document.getElementById('tasks');
+
     add_task.addEventListener('click', (e)=>{
         e.preventDefault();
         const task = new_task.value;
+        if(new_task.value===""){
+            return alert("task is empty,please fill");
+        }
 
         let adddiv = document.createElement('div');
         adddiv.classList.add('task');
@@ -14,7 +19,7 @@ window.addEventListener('load', () => {
         adddiv.appendChild(addcontent);
 
         const task_input = document.createElement('input');
-        task_input.classList.add('text');
+        task_input.classList.add('add_text');
         task_input.type = 'text';
         task_input.value = task;
         task_input.setAttribute('readonly' , 'readonly');
@@ -22,11 +27,14 @@ window.addEventListener('load', () => {
 
         const addactions = document.createElement('div');
         addactions.classList.add('actions');
+
+        
         const task_edit = document.createElement('button');
         task_edit.classList.add('edit');
         task_edit.innerText = 'Edit';
+        
         const task_delete = document.createElement('button');
-        task_delete.classList.add('Delete');
+        task_delete.classList.add('delete');
         task_delete.innerText = 'Delete';
 
         addactions.appendChild(task_edit);

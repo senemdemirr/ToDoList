@@ -103,18 +103,20 @@ h1{
 .content .text:not(:read-only){
 	color: var(--pink);
 }
-#add_text{
+.add_text{
 	border: none;
+	color: var(--pink);
 	background-color: var(--darkest);
+	
 }
-#add_text:focus{
+.add_text:focus{
 	outline: none;
 }
 .actions{
 	display: flex;
 	margin: 0 -10px;
 }
-#edit{
+.edit{
 	cursor: pointer;
 	margin-left: 300px;
 	font-size: 23px;
@@ -128,7 +130,7 @@ h1{
 	background-color: var(--darkest);
 
 }
-#delete{
+.delete{
 	cursor: pointer;
 	font-size: 23px;
 	font-weight: 700;
