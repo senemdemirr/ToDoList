@@ -4,11 +4,18 @@ window.addEventListener('load', () => {
     var add_task = document.getElementById('add-task');
     var tasks = document.getElementById('tasks');
 
+    
+    new_task.addEventListener("keyup",function(event){
+        if(event.keyCode === 13){
+            add_task.click();
+        }
+    })
+
     add_task.addEventListener('click', (e)=>{
         e.preventDefault();
         const task = new_task.value;
         if(new_task.value===""){
-            return alert("task is empty,please fill");
+            return alert("Task is empty,please fill");
         }
 
         let adddiv = document.createElement('div');
@@ -44,16 +51,21 @@ window.addEventListener('load', () => {
         tasks.appendChild(adddiv);
 
         new_task.value = '';
+        
+        
 
         task_edit.addEventListener('click', (e) => {
             if (task_edit.innerText.toLowerCase()=="edit") {
                 task_edit.innerText = "Save";
-                task_edit.removeAttribute("readonly");
+                task_input.removeAttribute("readonly");
                 task_edit.focus();
             }
             else {
                 task_edit.innerText = "Edit";
-                task_edit.setAttribute("readonly","readonly");
+                task_input.setAttribute("readonly","readonly");
+                if(task_input.value==""){
+                    tasks.removeChild(adddiv);
+                }
             }
         });
         task_delete.addEventListener('click', (e) => {
